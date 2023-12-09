@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Form from "./Form";
+import Input from "./Input";
 import './list.css'
 
 let initialMemos = [
@@ -54,20 +54,28 @@ export default function List() {
     setEditable(true);
   }
 
+  function handleDeleteMemo(memo) {
+    setMemos(memos.filter((memo) => memo.id !== editingMemoId));
+    setAnswer("");
+    setEditable(false);
+    setEditingMemoId(null);
+  }
+
   return editable ? (
     <>
       <h1>メモ詳細</h1>
-      <Form
+      <Input
         value={answer}
         handleAnswerChange={handleAnswerChange}
         handleAddMemo={handleSaveMemo}
         buttonText={"save"}
       />
+      <button onClick={handleDeleteMemo}>delete</button>
     </>
   ) : (
     <>
       <h1>メモ一覧</h1>
-      <Form
+      <Input
         value={answer}
         handleAnswerChange={handleAnswerChange}
         handleAddMemo={handleAddMemo}
