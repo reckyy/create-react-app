@@ -23,14 +23,14 @@ export default function List() {
   }
 
   function handleAddMemo(e) {
-    e.preventDefault(); // フォームのデフォルト動作を防止
+    e.preventDefault();
     const nextMemos = [...memos, { id: nextId++, content: answer }];
     setMemos(nextMemos);
     setAnswer("");
   }
 
   return (
-    <div class="container">
+    <>
       <h1>メモ一覧</h1>
       <Form
         value={answer}
@@ -43,6 +43,6 @@ export default function List() {
         ))}
         +
       </ul>
-    </div>
+    </>
   );
 }
