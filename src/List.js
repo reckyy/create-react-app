@@ -1,20 +1,19 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import Input from "./Input";
 import './list.css'
 
-let initialMemos = [
-  { id: 0, content: "最初のメモ" },
-  { id: 1, content: "改行ありのメモ\nです" },
-  { id: 2, content: "二個改行\nがある\nメモです。" },
-];
-
-let nextId = 3;
+let initialMemos = JSON.parse(localStorage.getItem("memos")) || [];
 
 export default function List() {
   const [memos, setMemos] = useState(initialMemos);
   const [answer, setAnswer] = useState("");
   const [editable, setEditable] = useState(false);
   const [editingMemoId, setEditingMemoId] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("memos", JSON.stringify(memos));
+  }, [memos]);
 
   const firstRowOfMemos = memos.map(({ id, content }) => ({
     id: id,
@@ -27,7 +26,8 @@ export default function List() {
 
   function handleAddMemo(e) {
     e.preventDefault();
-    const nextMemos = [...memos, { id: nextId++, content: answer }];
+    const nextId = memos.length > 0 ? memos[memos.length - 1].id + 1 : 0;
+    const nextMemos = [...memos, { id: nextId, content: answer }];
     setMemos(nextMemos);
     setAnswer("");
   }

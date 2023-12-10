@@ -1,4 +1,4 @@
-export default function Form({ answer, handleAnswerChange, handleAddMemo }){
+export default function Input({ answer, handleAnswerChange, handleAddMemo }){
 
   return (
     <>
