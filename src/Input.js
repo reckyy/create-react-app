@@ -8,7 +8,6 @@ export default function Input({ answer, handleAnswerChange, handleAddMemo }){
           value={answer}
           onChange={handleAnswerChange}
         />
-        <button type="submit">add</button>
       </form>
     </>
   );
