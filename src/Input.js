@@ -1,5 +1,4 @@
-export default function Input({ value, handleAnswerChange }){
-
+export default function Input({ value, handleAnswerChange }) {
   return (
     <>
       <form>
