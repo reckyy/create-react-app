@@ -62,7 +62,7 @@ export default function List() {
   }
 
   return editable ? (
-    <>
+    <div class="container">
       <h1>メモ詳細</h1>
       <Input
         value={answer}
@@ -71,9 +71,9 @@ export default function List() {
       />
       <button type="submit">save</button>
       <button onClick={handleDeleteMemo}>delete</button>
-    </>
+    </div>
   ) : (
-    <>
+    <div class="container">
       <h1>メモ一覧</h1>
       <Input
         value={answer}
@@ -89,6 +89,6 @@ export default function List() {
         ))}
         +
       </ul>
-    </>
+    </div>
   );
 }
