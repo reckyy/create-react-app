@@ -67,9 +67,8 @@ export default function List() {
       <Input
         value={answer}
         handleAnswerChange={handleAnswerChange}
-        handleAddMemo={handleSaveMemo}
       />
-      <button type="submit">save</button>
+      <button onClick={handleSaveMemo}>save</button>
       <button onClick={handleDeleteMemo}>delete</button>
     </div>
   ) : (
@@ -78,9 +77,8 @@ export default function List() {
       <Input
         value={answer}
         handleAnswerChange={handleAnswerChange}
-        handleAddMemo={handleAddMemo}
       />
-      <button type="submit">add</button>
+      <button type="submit" onClick={handleAddMemo}>add</button>
       <ul>
         {firstRowOfMemos.map((memo) => (
           <li key={memo.id} onClick={() => handleMemoEditable(memo)}>

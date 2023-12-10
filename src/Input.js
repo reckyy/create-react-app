@@ -1,11 +1,11 @@
-export default function Input({ answer, handleAnswerChange, handleAddMemo }){
+export default function Input({ value, handleAnswerChange }){
 
   return (
     <>
-      <form onSubmit={handleAddMemo}>
+      <form>
         <textarea
           placeholder="メモ内容"
-          value={answer}
+          value={value}
           onChange={handleAnswerChange}
         />
       </form>
