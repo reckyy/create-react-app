@@ -43,13 +43,9 @@ export default function List() {
 
   async function handleSaveMemo(e) {
     e.preventDefault();
-    const nextMemos = memos.map((memo) => {
-      if (memo.id === editingMemoId) {
-        return { id: memo.id, content: answer };
-      } else {
-        return memo;
-      }
-    });
+    const targetIndex = memos.findIndex((memo) => memo.id === editingMemoId);
+    const nextMemos = [...memos];
+    nextMemos[targetIndex] = { ...nextMemos[targetIndex], content: answer };
     await setMemos(nextMemos);
     await setAnswer("");
     await setEditingMemoId(null);
