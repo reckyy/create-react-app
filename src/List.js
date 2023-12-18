@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Input from "./Input";
 import "./list.css";
 
-let initialMemos = JSON.parse(localStorage.getItem("memos")) || [];
+const initialMemos = JSON.parse(localStorage.getItem("memos")) || [];
 
 export default function List() {
   const [memos, setMemos] = useState(initialMemos);
