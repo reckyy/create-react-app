@@ -10,12 +10,12 @@ export default function EditMemo({ memo, onSave, onDelete }) {
   }
 
   function handleSave() {
-    const updatedMemo = {...memo, content: answer};
+    const updatedMemo = { ...memo, content: answer };
     setAnswer("");
     onSave(updatedMemo);
   }
 
-  function handleDelete(){
+  function handleDelete() {
     setAnswer("");
     onDelete(memo);
   }
