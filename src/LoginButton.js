@@ -9,8 +9,8 @@ export default function LoginButton() {
   }
 
   return (
-    <>
+    <div class="loginbutton">
       <button onClick={handleLogin}>{isLoggedIn ? "logout" : "login"}</button>
-    </>
+    </div>
   );
 }
