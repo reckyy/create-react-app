@@ -1,6 +1,10 @@
 import "./list.css";
+import { useContext } from "react";
+import { isLoggedInContext } from "./IsLoggedInContext";
 
 export default function IndexMemo({ memos, toEdit, toAdd }) {
+  const { isLoggedIn } = useContext(isLoggedInContext);
+
   return (
     <div class="container">
       <h1>メモ一覧</h1>
@@ -11,7 +15,7 @@ export default function IndexMemo({ memos, toEdit, toAdd }) {
           </li>
         ))}
       </ul>
-      <p onClick={toAdd}>+</p>
+      {isLoggedIn && <p onClick={toAdd}>+</p> }
     </div>
   );
 }
