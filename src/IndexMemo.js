@@ -15,7 +15,7 @@ export default function IndexMemo({ memos, toEdit, toAdd }) {
           </li>
         ))}
       </ul>
-      {isLoggedIn && <p onClick={toAdd}>+</p> }
+      {isLoggedIn && <p onClick={toAdd}>+</p>}
     </div>
   );
 }

@@ -27,8 +27,8 @@ export default function EditMemo({ memo, onSave, onDelete }) {
     <div class="container">
       <h1>メモ詳細</h1>
       <Input value={answer} handleAnswerChange={handleAnswerChange} />
-      {isLoggedIn &&<button onClick={handleSave}>save</button> }
-      {isLoggedIn && <button onClick={handleDelete}>delete</button> }
+      {isLoggedIn && <button onClick={handleSave}>save</button>}
+      {isLoggedIn && <button onClick={handleDelete}>delete</button>}
     </div>
   );
 }

@@ -58,11 +58,11 @@ export default function List() {
             <IsLoggedInProvider>
               <LoginButton />
 
-            <IndexMemo
-              memos={memos}
-              toEdit={handleMemoEditable}
-              toAdd={handleChangeStatusToAdd}
-            />
+              <IndexMemo
+                memos={memos}
+                toEdit={handleMemoEditable}
+                toAdd={handleChangeStatusToAdd}
+              />
             </IsLoggedInProvider>
           </>
         );
@@ -77,12 +77,13 @@ export default function List() {
             <IsLoggedInProvider>
               <LoginButton />
 
-            <EditMemo
-              memo={editingMemo}
-              onSave={handleSaveMemo}
-              onDelete={handleDeleteMemo} />
+              <EditMemo
+                memo={editingMemo}
+                onSave={handleSaveMemo}
+                onDelete={handleDeleteMemo}
+              />
             </IsLoggedInProvider>
-            </>
+          </>
         );
       }
       default: {
