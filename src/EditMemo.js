@@ -2,11 +2,11 @@ import { useState } from "react";
 import Input from "./Input";
 import "./list.css";
 import { useContext } from "react";
-import { isLoggedInContext } from "./IsLoggedInContext";
+import { loggedInContext } from "./LoggedInContext";
 
 export default function EditMemo({ memo, onSave, onDelete }) {
   const [answer, setAnswer] = useState(memo ? memo.content : "");
-  const { isLoggedIn } = useContext(isLoggedInContext);
+  const { loggedIn } = useContext(loggedInContext);
 
   function handleAnswerChange(e) {
     setAnswer(e.target.value);
@@ -27,7 +27,7 @@ export default function EditMemo({ memo, onSave, onDelete }) {
     <div class="container">
       <h1>メモ詳細</h1>
       <Input value={answer} handleAnswerChange={handleAnswerChange} />
-      {isLoggedIn && (
+      {loggedIn && (
         <>
           <button onClick={handleSave}>save</button>
           <button onClick={handleDelete}>delete</button>

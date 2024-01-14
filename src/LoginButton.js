@@ -1,16 +1,16 @@
 import { useContext } from "react";
-import { isLoggedInContext } from "./IsLoggedInContext";
+import { loggedInContext } from "./LoggedInContext";
 
 export default function LoginButton() {
-  const { isLoggedIn, setIsLoggedIn } = useContext(isLoggedInContext);
+  const { loggedIn, setLoggedIn } = useContext(loggedInContext);
 
   function handleLogin() {
-    setIsLoggedIn(isLoggedIn === true ? false : true);
+    setLoggedIn(loggedIn === true ? false : true);
   }
 
   return (
     <div class="loginbutton">
-      <button onClick={handleLogin}>{isLoggedIn ? "logout" : "login"}</button>
+      <button onClick={handleLogin}>{loggedIn ? "logout" : "login"}</button>
     </div>
   );
 }

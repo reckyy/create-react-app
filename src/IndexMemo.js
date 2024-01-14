@@ -1,9 +1,9 @@
 import "./list.css";
 import { useContext } from "react";
-import { isLoggedInContext } from "./IsLoggedInContext";
+import { loggedInContext } from "./LoggedInContext";
 
 export default function IndexMemo({ memos, toEdit, toAdd }) {
-  const { isLoggedIn } = useContext(isLoggedInContext);
+  const { loggedIn } = useContext(loggedInContext);
 
   return (
     <div class="container">
@@ -15,7 +15,7 @@ export default function IndexMemo({ memos, toEdit, toAdd }) {
           </li>
         ))}
       </ul>
-      {isLoggedIn && <p onClick={toAdd}>+</p>}
+      {loggedIn && <p onClick={toAdd}>+</p>}
     </div>
   );
 }

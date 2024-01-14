@@ -5,7 +5,7 @@ import IndexMemo from "./IndexMemo";
 import NewMemo from "./NewMemo";
 import EditMemo from "./EditMemo";
 import "./list.css";
-import IsLoggedInProvider from "./IsLoggedInContext";
+import LoggedInProvider from "./LoggedInContext";
 
 const initialMemos = JSON.parse(localStorage.getItem("memos")) || [];
 
@@ -55,7 +55,7 @@ export default function List() {
       case "index": {
         return (
           <>
-            <IsLoggedInProvider>
+            <LoggedInProvider>
               <LoginButton />
 
               <IndexMemo
@@ -63,7 +63,7 @@ export default function List() {
                 toEdit={handleMemoEditable}
                 toAdd={handleChangeStatusToAdd}
               />
-            </IsLoggedInProvider>
+            </LoggedInProvider>
           </>
         );
       }
@@ -74,7 +74,7 @@ export default function List() {
         const editingMemo = memos.find((memo) => memo.id === editingMemoId);
         return (
           <>
-            <IsLoggedInProvider>
+            <LoggedInProvider>
               <LoginButton />
 
               <EditMemo
@@ -82,7 +82,7 @@ export default function List() {
                 onSave={handleSaveMemo}
                 onDelete={handleDeleteMemo}
               />
-            </IsLoggedInProvider>
+            </LoggedInProvider>
           </>
         );
       }
