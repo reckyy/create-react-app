@@ -1,12 +1,11 @@
 import { useState } from "react";
 import Input from "./Input";
 import "./list.css";
-import { useContext } from "react";
-import { loggedInContext } from "./LoggedInContext";
+import { useLoggedInValue } from "./LoggedInContext";
 
 export default function EditMemo({ memo, onSave, onDelete }) {
   const [answer, setAnswer] = useState(memo ? memo.content : "");
-  const { loggedIn } = useContext(loggedInContext);
+  const { loggedIn } = useLoggedInValue();
 
   function handleAnswerChange(e) {
     setAnswer(e.target.value);

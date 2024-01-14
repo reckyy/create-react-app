@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { loggedInContext } from "./LoggedInContext";
+import { useLoggedInValue } from "./LoggedInContext";
 
 export default function LoginButton() {
-  const { loggedIn, setLoggedIn } = useContext(loggedInContext);
+  const { loggedIn, setLoggedIn } = useLoggedInValue();
 
   function handleLogin() {
     setLoggedIn(!loggedIn);

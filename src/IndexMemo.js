@@ -1,9 +1,8 @@
+import { useLoggedInValue } from "./LoggedInContext";
 import "./list.css";
-import { useContext } from "react";
-import { loggedInContext } from "./LoggedInContext";
 
 export default function IndexMemo({ memos, toEdit, toAdd }) {
-  const { loggedIn } = useContext(loggedInContext);
+  const { loggedIn } = useLoggedInValue();
 
   return (
     <div class="container">
