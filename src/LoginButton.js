@@ -5,7 +5,7 @@ export default function LoginButton() {
   const { loggedIn, setLoggedIn } = useContext(loggedInContext);
 
   function handleLogin() {
-    setLoggedIn(loggedIn === true ? false : true);
+    setLoggedIn(!loggedIn);
   }
 
   return (
