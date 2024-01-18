@@ -1,4 +1,4 @@
-import { useLoggedInValue } from "./LoggedInContext";
+import { useLoggedInValue } from "../contexts/LoggedInContext";
 
 export default function LoginButton() {
   const { loggedIn, setLoggedIn } = useLoggedInValue();

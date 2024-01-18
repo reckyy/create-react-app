@@ -1,5 +1,5 @@
-import { useLoggedInValue } from "./LoggedInContext";
-import "./list.css";
+import { useLoggedInValue } from "../contexts/LoggedInContext";
+import "../css/list.css";
 
 export default function IndexMemo({ memos, toEdit, toAdd }) {
   const { loggedIn } = useLoggedInValue();

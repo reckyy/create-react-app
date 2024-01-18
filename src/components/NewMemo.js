@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Input from "./Input";
-import "./list.css";
+import Input from "../components/Input";
+import "../css/list.css";
 
 export default function NewMemo({ memos, onAdd }) {
   const [answer, setAnswer] = useState("");

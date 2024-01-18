@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Input";
-import "./list.css";
-import { useLoggedInValue } from "./LoggedInContext";
+import "../css/list.css";
+import { useLoggedInValue } from "../contexts/LoggedInContext";
 
 export default function EditMemo({ memo, onSave, onDelete }) {
   const [answer, setAnswer] = useState(memo ? memo.content : "");
@@ -30,7 +30,7 @@ export default function EditMemo({ memo, onSave, onDelete }) {
         <>
           <button onClick={handleSave}>save</button>
           <button onClick={handleDelete}>delete</button>
-          </>
+        </>
       )}
     </div>
   );

@@ -4,8 +4,8 @@ import LoginButton from "./LoginButton";
 import IndexMemo from "./IndexMemo";
 import NewMemo from "./NewMemo";
 import EditMemo from "./EditMemo";
-import "./list.css";
-import LoggedInProvider from "./LoggedInContext";
+import "../css/list.css";
+import LoggedInProvider from "../contexts/LoggedInContext";
 
 const initialMemos = JSON.parse(localStorage.getItem("memos")) || [];
 
