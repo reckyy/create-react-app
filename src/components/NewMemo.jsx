@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "../components/Input";
+import Input from "./Input";
 import "../css/list.css";
 
 export default function NewMemo({ memos, onAdd }) {
