@@ -12,6 +12,6 @@ export default function LoggedInProvider({ children }) {
       {children}
     </loggedInContext.Provider>
   );
-};
+}
 
 export const useLoggedInValue = () => useContext(loggedInContext);
