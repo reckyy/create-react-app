@@ -68,7 +68,15 @@ export default function List() {
         );
       }
       case "isAdding": {
-        return <NewMemo memos={memos} onAdd={handleAddMemo} />;
+        return (
+          <>
+            <LoggedInProvider>
+              <LoginButton />
+
+              <NewMemo onAdd={handleAddMemo} />
+            </LoggedInProvider>
+          </>
+        );
       }
       case "isEditing": {
         const editingMemo = memos.find((memo) => memo.id === editingMemoId);
