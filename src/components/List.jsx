@@ -19,7 +19,7 @@ export default function List() {
   async function handleSaveMemo(updatedMemo) {
     const targetIndex = updatedMemo.id;
     const nextMemos = [...memos];
-    nextMemos[targetIndex - 1] = updatedMemo;
+    nextMemos[targetIndex] = updatedMemo;
     await setMemos(nextMemos);
     await setEditingMemoId(null);
     setStatus("index");
