@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <LoggedInProvider>
       <LoginButton />
-        <List />
+      <List />
     </LoggedInProvider>
   </React.StrictMode>,
 );

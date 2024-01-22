@@ -53,28 +53,26 @@ export default function List() {
       case "index": {
         return (
           <>
-              <IndexMemo
-                memos={memos}
-                toEdit={handleMemoEditable}
-                toAdd={handleChangeStatusToAdd}
-              />
+            <IndexMemo
+              memos={memos}
+              toEdit={handleMemoEditable}
+              toAdd={handleChangeStatusToAdd}
+            />
           </>
         );
       }
       case "isAdding": {
-        return (
-              <NewMemo onAdd={handleAddMemo} />
-        );
+        return <NewMemo onAdd={handleAddMemo} />;
       }
       case "isEditing": {
         const editingMemo = memos.find((memo) => memo.id === editingMemoId);
         return (
           <>
-              <EditMemo
-                memo={editingMemo}
-                onSave={handleSaveMemo}
-                onDelete={handleDeleteMemo}
-              />
+            <EditMemo
+              memo={editingMemo}
+              onSave={handleSaveMemo}
+              onDelete={handleDeleteMemo}
+            />
           </>
         );
       }
