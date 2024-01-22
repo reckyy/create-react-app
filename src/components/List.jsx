@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import LoginButton from "./LoginButton";
 import IndexMemo from "./IndexMemo";
 import NewMemo from "./NewMemo";
 import EditMemo from "./EditMemo";
 import "../css/list.css";
-import LoggedInProvider from "../contexts/LoggedInContext";
 
 const initialMemos = JSON.parse(localStorage.getItem("memos")) || [];
 
@@ -55,42 +53,28 @@ export default function List() {
       case "index": {
         return (
           <>
-            <LoggedInProvider>
-              <LoginButton />
-
               <IndexMemo
                 memos={memos}
                 toEdit={handleMemoEditable}
                 toAdd={handleChangeStatusToAdd}
               />
-            </LoggedInProvider>
           </>
         );
       }
       case "isAdding": {
         return (
-          <>
-            <LoggedInProvider>
-              <LoginButton />
-
               <NewMemo onAdd={handleAddMemo} />
-            </LoggedInProvider>
-          </>
         );
       }
       case "isEditing": {
         const editingMemo = memos.find((memo) => memo.id === editingMemoId);
         return (
           <>
-            <LoggedInProvider>
-              <LoginButton />
-
               <EditMemo
                 memo={editingMemo}
                 onSave={handleSaveMemo}
                 onDelete={handleDeleteMemo}
               />
-            </LoggedInProvider>
           </>
         );
       }
