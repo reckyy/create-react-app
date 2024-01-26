@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import IndexMemo from "./IndexMemo";
 import NewMemo from "./NewMemo";
 import EditMemo from "./EditMemo";
-import "./list.css";
+import "../css/list.css";
 
 const initialMemos = JSON.parse(localStorage.getItem("memos")) || [];
 
@@ -52,24 +52,28 @@ export default function List() {
     switch (status) {
       case "index": {
         return (
-          <IndexMemo
-            memos={memos}
-            toEdit={handleMemoEditable}
-            toAdd={handleChangeStatusToAdd}
-          />
+          <>
+            <IndexMemo
+              memos={memos}
+              toEdit={handleMemoEditable}
+              toAdd={handleChangeStatusToAdd}
+            />
+          </>
         );
       }
       case "isAdding": {
-        return <NewMemo memos={memos} onAdd={handleAddMemo} />;
+        return <NewMemo onAdd={handleAddMemo} />;
       }
       case "isEditing": {
         const editingMemo = memos.find((memo) => memo.id === editingMemoId);
         return (
-          <EditMemo
-            memo={editingMemo}
-            onSave={handleSaveMemo}
-            onDelete={handleDeleteMemo}
-          />
+          <>
+            <EditMemo
+              memo={editingMemo}
+              onSave={handleSaveMemo}
+              onDelete={handleDeleteMemo}
+            />
+          </>
         );
       }
       default: {

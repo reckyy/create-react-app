@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import List from "./List";
+import "./css/index.css";
+import List from "./components/List";
+import LoggedInProvider from "./contexts/LoggedInContext";
+import LoginButton from "./components/LoginButton";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <List />
+    <LoggedInProvider>
+      <LoginButton />
+      <List />
+    </LoggedInProvider>
   </React.StrictMode>,
 );
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Input from "./Input";
-import "./list.css";
+import "../css/list.css";
 
-export default function NewMemo({ memos, onAdd }) {
+export default function NewMemo({ onAdd }) {
   const [answer, setAnswer] = useState("");
 
   function handleAnswerChange(e) {

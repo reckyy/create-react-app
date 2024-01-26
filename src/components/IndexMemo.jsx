@@ -1,6 +1,9 @@
-import "./list.css";
+import { useLoggedInValue } from "../contexts/LoggedInContext";
+import "../css/list.css";
 
 export default function IndexMemo({ memos, toEdit, toAdd }) {
+  const { loggedIn } = useLoggedInValue();
+
   return (
     <div class="container">
       <h1>メモ一覧</h1>
@@ -11,7 +14,7 @@ export default function IndexMemo({ memos, toEdit, toAdd }) {
           </li>
         ))}
       </ul>
-      <p onClick={toAdd}>+</p>
+      {loggedIn && <p onClick={toAdd}>+</p>}
     </div>
   );
 }
